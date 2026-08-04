@@ -1,0 +1,85 @@
+{
+  "name": "multi-model-dager-benchmark",
+  "title": "Multi-model multi-dataset DAGER benchmark",
+  "mode": "train_attack",
+  "models": [
+    "tiny_gpt2",
+    "gpt2",
+    "gpt2-medium",
+    "gpt2-large",
+    "gpt2-xl",
+    "bert-base",
+    "bert-large",
+    "roberta-base",
+    "roberta-large",
+    "deberta-v3-small",
+    "deberta-v3-base",
+    "deberta-v3-large",
+    "llama-2-7b",
+    "llama-2-13b",
+    "llama-3.1-8b",
+    "gemma-2-2b",
+    "gemma-2-9b",
+    "phi-2",
+    "opt-1.3b"
+  ],
+  "datasets": [
+    "rotten_tomatoes",
+    "emotion",
+    "financial_phrasebank",
+    "wikitext2",
+    "dialogsum",
+    "cnn_dailymail"
+  ],
+  "defenses": [
+    "none",
+    "aegis"
+  ],
+  "attacks": [
+    "dager"
+  ],
+  "defaults": {
+    "models": [
+      "gpt2-medium"
+    ],
+    "datasets": [
+      "rotten_tomatoes",
+      "emotion",
+      "financial_phrasebank",
+      "wikitext2",
+      "dialogsum",
+      "cnn_dailymail"
+    ],
+    "defenses": [
+      "none",
+      "aegis"
+    ],
+    "attacks": [
+      "dager"
+    ],
+    "epochs": 20,
+    "lr": 5e-05,
+    "batch_size": 8,
+    "dataset_size": 1000,
+    "n_attack": 10,
+    "early_stop_patience": 5
+  },
+  "quick_defaults": {
+    "models": [
+      "tiny_gpt2"
+    ],
+    "datasets": [
+      "rotten_tomatoes"
+    ],
+    "epochs": 1,
+    "batch_size": 4,
+    "dataset_size": 20,
+    "n_attack": 3,
+    "early_stop_patience": 0
+  },
+  "validation_defaults": {},
+  "output_filename": "multi-model-dager-benchmark.json",
+  "behavior": {
+    "warmup_sequence_classifier": true
+  }
+}

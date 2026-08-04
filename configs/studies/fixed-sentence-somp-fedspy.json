@@ -1,0 +1,66 @@
+{
+  "name": "fixed-sentence-somp-fedspy",
+  "title": "Fixed-sentence SOMP and FedSpy comparison",
+  "mode": "fixed_grid",
+  "models": [
+    "gpt2"
+  ],
+  "datasets": [
+    "wikitext2",
+    "rotten_tomatoes",
+    "dialogsum"
+  ],
+  "defenses": [
+    "none",
+    "gradient_pruning_50",
+    "aegis"
+  ],
+  "attacks": [
+    "somp",
+    "fedspy"
+  ],
+  "defaults": {
+    "models": [
+      "gpt2"
+    ],
+    "datasets": [
+      "wikitext2",
+      "rotten_tomatoes",
+      "dialogsum"
+    ],
+    "defenses": [
+      "none",
+      "gradient_pruning_50",
+      "aegis"
+    ],
+    "attacks": [
+      "somp",
+      "fedspy"
+    ]
+  },
+  "quick_defaults": {},
+  "validation_defaults": {},
+  "output_filename": "fixed-sentence-somp-fedspy.json",
+  "fixed_sentences": {
+    "wikitext2": [
+      "M15 class monitors with 7 @.@ 5 in ( 190 mm ) guns :"
+    ],
+    "rotten_tomatoes": [
+      "sometimes seems less like storytelling than something the otherwise compelling director needed to get off his chest .",
+      "what happened with pluto nash ? how did it ever get made ?",
+      "the actors are appealing , but elysian fields is idiotic and absurdly sentimental ."
+    ],
+    "dialogsum": [
+      "Ah, who needs that anyway? I know all about women.",
+      "Don't worry. See where it says, ' New User '?"
+    ]
+  },
+  "behavior": {
+    "include_reconstructions": true,
+    "reconstruction_metrics": [
+      "r1",
+      "r2",
+      "rl"
+    ]
+  }
+}

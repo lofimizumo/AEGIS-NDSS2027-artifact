@@ -1,0 +1,84 @@
+{
+  "name": "aegis-pareto-sweep",
+  "title": "AEGIS privacy-utility Pareto sweep",
+  "mode": "pareto",
+  "models": [
+    "tiny_gpt2",
+    "gpt2",
+    "gpt2-medium",
+    "gpt2-large",
+    "gpt2-xl",
+    "bert-base",
+    "bert-large",
+    "roberta-base",
+    "roberta-large",
+    "deberta-v3-small",
+    "deberta-v3-base",
+    "deberta-v3-large",
+    "llama-2-7b",
+    "llama-2-13b",
+    "llama-3.1-8b",
+    "gemma-2-2b",
+    "gemma-2-9b",
+    "phi-2",
+    "opt-1.3b"
+  ],
+  "datasets": [
+    "rotten_tomatoes",
+    "emotion",
+    "financial_phrasebank",
+    "wikitext2",
+    "dialogsum",
+    "cnn_dailymail"
+  ],
+  "defenses": [
+    "aegis"
+  ],
+  "attacks": [
+    "dager",
+    "mlp_svd",
+    "embed_norm"
+  ],
+  "defaults": {
+    "models": [
+      "gpt2"
+    ],
+    "datasets": [
+      "wikitext2"
+    ],
+    "defenses": [
+      "aegis"
+    ],
+    "attacks": [
+      "dager",
+      "mlp_svd",
+      "embed_norm"
+    ],
+    "grid": [
+      0.0,
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0
+    ],
+    "epochs": 5,
+    "lr": 5e-05,
+    "dataset_size": 500,
+    "n_attack": 5
+  },
+  "quick_defaults": {
+    "grid": [
+      0.0,
+      1.0
+    ],
+    "epochs": 1,
+    "dataset_size": 20,
+    "n_attack": 1
+  },
+  "validation_defaults": {},
+  "output_filename": "aegis-pareto-sweep.json",
+  "behavior": {
+    "dataset_required": true
+  }
+}

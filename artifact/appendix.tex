@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\makeatletter
+\@ifundefined{paragraph}{%
+  \newcommand{\paragraph}[1]{\smallskip\noindent\textbf{#1.}\ }%
+}{}
+\makeatother
+
+\begin{document}
+
+\title{%
+  \textbf{\LARGE Artifact Appendix}\\[0.5em]
+  \large AEGIS: Attention-Embedding Gradient Isolation Shield\\
+  \large Triple-Channel Gradient Masking for Privacy-Preserving Federated LLM Fine-Tuning
+}
+\author{Paper ID: 3053}
+\date{}
+\maketitle
+
+\section{Artifact Appendix}
+\label{app:artifact}
+
+\paragraph{Badge.}
+We request \emph{Artifacts Reproduced}. The artifact is a scaled-down CPU micro-GPT-2
+experiment with fixed local token IDs and default \texttt{AegisDefense}. It supports the
+directional claim that AEGIS suppresses embedding-gradient token-set leakage versus an
+undefended baseline; it does not reproduce full-table ROUGE. No model, tokenizer, or
+dataset is downloaded at runtime.
+
+\paragraph{Requirements.}
+Docker (x86-64/arm64) or
+Python~3.11 on Linux/macOS. Setup 5--20 minutes; kick-the-tires $<$2 minutes;
+scaled-reproduction $\sim$5 minutes (up to $\sim$10 on slower hosts).
+
+\paragraph{Claims.}
+\textbf{R1:} undefended embed-norm content-token recall above threshold.
+\textbf{R2:} AEGIS suppresses protected recall below threshold; channels/utility remain
+finite.
+
+\paragraph{Workflow.}
+\begin{verbatim}
+docker build -t aegis-artifact:ndss27 .
+docker create --name aegis-ktt aegis-artifact:ndss27
+docker start --attach aegis-ktt
+docker cp aegis-ktt:/opt/aegis/artifact-results/kick-the-tires.json .
+docker rm aegis-ktt
+
+docker create --name aegis-repro aegis-artifact:ndss27 \
+  /opt/aegis/scripts/run-scaled-reproduction.sh
+docker start --attach aegis-repro
+docker cp aegis-repro:/opt/aegis/artifact-results/scaled-reproduction.json .
+docker rm aegis-repro
+\end{verbatim}
+
+\begin{sloppypar}
+Locally: \path{scripts/install-artifact.sh}, then \texttt{aegis artifact}
+(or \path{quick-test} / \path{scaled-reproduction}).
+Expect exit status 0 and a \texttt{Verified} line with \texttt{device=cpu} and schema version 3.
+Full detail is in \texttt{README.md}.
+\end{sloppypar}
+
+\end{document}
+
+

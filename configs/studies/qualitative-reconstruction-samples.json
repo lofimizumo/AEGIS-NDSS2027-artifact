@@ -1,0 +1,63 @@
+{
+  "name": "qualitative-reconstruction-samples",
+  "title": "Qualitative reconstruction samples",
+  "mode": "qualitative",
+  "models": [
+    "gpt2"
+  ],
+  "datasets": [
+    "wikitext2",
+    "rotten_tomatoes",
+    "dialogsum"
+  ],
+  "defenses": [
+    "none",
+    "gradient_pruning_50",
+    "aegis"
+  ],
+  "attacks": [
+    "dager",
+    "grab",
+    "somp",
+    "fedspy"
+  ],
+  "defaults": {
+    "models": [
+      "gpt2"
+    ],
+    "datasets": [
+      "wikitext2"
+    ],
+    "defenses": [
+      "none",
+      "gradient_pruning_50",
+      "aegis"
+    ],
+    "attacks": [
+      "dager",
+      "grab",
+      "somp",
+      "fedspy"
+    ],
+    "dataset_size": 200,
+    "n_sentences": 3,
+    "min_tokens": 6,
+    "max_tokens": 18,
+    "grab_nh": 5,
+    "grab_nc": 500,
+    "grab_nd": 5,
+    "grab_nb": 4,
+    "grab_ne": 20,
+    "grab_lr": 0.01,
+    "grab_alpha_l1": 0.01
+  },
+  "quick_defaults": {
+    "dataset_size": 20,
+    "n_sentences": 1
+  },
+  "validation_defaults": {},
+  "output_filename": "qualitative-reconstruction-samples.json",
+  "behavior": {
+    "dataset_required": true
+  }
+}

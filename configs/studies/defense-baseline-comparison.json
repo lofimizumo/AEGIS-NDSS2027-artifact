@@ -1,0 +1,92 @@
+{
+  "name": "defense-baseline-comparison",
+  "title": "Defense baseline comparison",
+  "mode": "train_attack",
+  "models": [
+    "tiny_gpt2",
+    "gpt2",
+    "gpt2-medium",
+    "gpt2-large",
+    "gpt2-xl",
+    "bert-base",
+    "bert-large",
+    "roberta-base",
+    "roberta-large",
+    "deberta-v3-small",
+    "deberta-v3-base",
+    "deberta-v3-large",
+    "llama-2-7b",
+    "llama-2-13b",
+    "llama-3.1-8b",
+    "gemma-2-2b",
+    "gemma-2-9b",
+    "phi-2",
+    "opt-1.3b"
+  ],
+  "datasets": [
+    "rotten_tomatoes",
+    "emotion",
+    "financial_phrasebank",
+    "wikitext2",
+    "dialogsum",
+    "cnn_dailymail"
+  ],
+  "defenses": [
+    "none",
+    "gaussian_noise_0.001",
+    "gaussian_noise_0.01",
+    "gaussian_noise_0.1",
+    "gradient_pruning_50",
+    "gradient_pruning_90",
+    "gradient_pruning_99",
+    "soteria",
+    "aegis"
+  ],
+  "attacks": [
+    "dager",
+    "mlp_svd",
+    "embed_norm"
+  ],
+  "defaults": {
+    "models": [
+      "gpt2"
+    ],
+    "datasets": [
+      "wikitext2"
+    ],
+    "defenses": [
+      "none",
+      "gaussian_noise_0.001",
+      "gaussian_noise_0.01",
+      "gaussian_noise_0.1",
+      "gradient_pruning_50",
+      "gradient_pruning_90",
+      "gradient_pruning_99",
+      "soteria",
+      "aegis"
+    ],
+    "attacks": [
+      "dager",
+      "mlp_svd",
+      "embed_norm"
+    ],
+    "epochs": 10,
+    "lr": 5e-05,
+    "dataset_size": 1000,
+    "n_attack": 10,
+    "max_steps": 2000
+  },
+  "quick_defaults": {
+    "epochs": 1,
+    "dataset_size": 20,
+    "n_attack": 3,
+    "max_steps": 20
+  },
+  "validation_defaults": {},
+  "output_filename": "defense-baseline-comparison.json",
+  "behavior": {
+    "result_style": "baseline",
+    "large_model_optimizer": "sgd",
+    "include_mean_r1": true
+  }
+}

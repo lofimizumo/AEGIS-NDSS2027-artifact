@@ -1,0 +1,96 @@
+{
+  "name": "aegis-component-ablation",
+  "title": "AEGIS component ablation",
+  "mode": "ablation",
+  "models": [
+    "tiny_gpt2",
+    "gpt2",
+    "gpt2-medium",
+    "gpt2-large",
+    "gpt2-xl",
+    "bert-base",
+    "bert-large",
+    "roberta-base",
+    "roberta-large",
+    "deberta-v3-small",
+    "deberta-v3-base",
+    "deberta-v3-large",
+    "llama-2-7b",
+    "llama-2-13b",
+    "llama-3.1-8b",
+    "gemma-2-2b",
+    "gemma-2-9b",
+    "phi-2",
+    "opt-1.3b"
+  ],
+  "datasets": [
+    "rotten_tomatoes",
+    "emotion",
+    "financial_phrasebank",
+    "wikitext2",
+    "dialogsum",
+    "cnn_dailymail"
+  ],
+  "defenses": [
+    "none",
+    "aegis"
+  ],
+  "attacks": [
+    "dager",
+    "mlp_svd",
+    "embed_norm"
+  ],
+  "defaults": {
+    "models": [
+      "gpt2"
+    ],
+    "datasets": [
+      "wikitext2"
+    ],
+    "attacks": [
+      "dager",
+      "mlp_svd",
+      "embed_norm"
+    ],
+    "variants": [
+      "a0",
+      "a1",
+      "a2",
+      "a3",
+      "a4",
+      "a5",
+      "a6",
+      "a7"
+    ],
+    "epochs": 20,
+    "lr": 5e-05,
+    "batch_size": 8,
+    "dataset_size": 1000,
+    "n_attack": 10,
+    "early_stop_patience": 5
+  },
+  "quick_defaults": {
+    "epochs": 1,
+    "batch_size": 4,
+    "dataset_size": 20,
+    "n_attack": 3,
+    "early_stop_patience": 0
+  },
+  "validation_defaults": {
+    "variants": [
+      "a0",
+      "a4",
+      "a7"
+    ]
+  },
+  "output_filename": "aegis-component-ablation.json",
+  "behavior": {
+    "validation_strategy": "ablation",
+    "validation_attack": "dager",
+    "validation_open_variant": "a0",
+    "validation_blocked_variants": [
+      "a4",
+      "a7"
+    ]
+  }
+}

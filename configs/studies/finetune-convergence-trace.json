@@ -1,0 +1,65 @@
+{
+  "name": "finetune-convergence-trace",
+  "title": "Fine-tune convergence trace",
+  "mode": "convergence",
+  "models": [
+    "tiny_gpt2",
+    "gpt2",
+    "gpt2-medium",
+    "gpt2-large",
+    "gpt2-xl",
+    "bert-base",
+    "bert-large",
+    "roberta-base",
+    "roberta-large",
+    "deberta-v3-small",
+    "deberta-v3-base",
+    "deberta-v3-large",
+    "llama-2-7b",
+    "llama-2-13b",
+    "llama-3.1-8b",
+    "gemma-2-2b",
+    "gemma-2-9b",
+    "phi-2",
+    "opt-1.3b"
+  ],
+  "datasets": [
+    "rotten_tomatoes",
+    "emotion",
+    "financial_phrasebank",
+    "wikitext2",
+    "dialogsum",
+    "cnn_dailymail"
+  ],
+  "defenses": [
+    "none",
+    "aegis"
+  ],
+  "attacks": [],
+  "defaults": {
+    "models": [
+      "gpt2"
+    ],
+    "datasets": [
+      "wikitext2"
+    ],
+    "defenses": [
+      "none"
+    ],
+    "epochs": 20,
+    "lr": 5e-05,
+    "batch_size": null,
+    "dataset_size": 1000,
+    "eval_every": 5,
+    "max_steps": null,
+    "early_stop_patience": 0
+  },
+  "quick_defaults": {
+    "epochs": 1,
+    "dataset_size": 20,
+    "max_steps": 20
+  },
+  "validation_defaults": {},
+  "output_filename": "finetune-convergence-trace.json",
+  "behavior": {}
+}

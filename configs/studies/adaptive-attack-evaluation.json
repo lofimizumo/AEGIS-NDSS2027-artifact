@@ -1,0 +1,97 @@
+{
+  "name": "adaptive-attack-evaluation",
+  "title": "Adaptive attack evaluation",
+  "mode": "train_attack",
+  "models": [
+    "gpt2",
+    "gpt2-medium",
+    "gpt2-large",
+    "gpt2-xl",
+    "llama-2-7b",
+    "llama-3.1-8b",
+    "bert-base",
+    "roberta-base"
+  ],
+  "datasets": [
+    "rotten_tomatoes",
+    "emotion",
+    "financial_phrasebank",
+    "wikitext2",
+    "dialogsum",
+    "cnn_dailymail"
+  ],
+  "defenses": [
+    "none",
+    "aegis"
+  ],
+  "attacks": [
+    "dager",
+    "grab",
+    "mlp_svd",
+    "embed_norm"
+  ],
+  "defaults": {
+    "models": [
+      "gpt2",
+      "gpt2-medium",
+      "gpt2-large",
+      "gpt2-xl",
+      "llama-2-7b",
+      "llama-3.1-8b",
+      "bert-base",
+      "roberta-base"
+    ],
+    "datasets": [
+      "wikitext2"
+    ],
+    "defenses": [
+      "none",
+      "aegis"
+    ],
+    "attacks": [
+      "dager",
+      "grab",
+      "mlp_svd",
+      "embed_norm"
+    ],
+    "epochs": 20,
+    "lr": 5e-05,
+    "batch_size": 8,
+    "dataset_size": 1000,
+    "n_attack": 10,
+    "early_stop_patience": 5,
+    "grab_nc": 50,
+    "grab_nd": 20,
+    "grab_nb": 10,
+    "mlpsvd_n_sv": 10
+  },
+  "quick_defaults": {
+    "models": [
+      "gpt2"
+    ],
+    "epochs": 1,
+    "batch_size": 4,
+    "dataset_size": 20,
+    "n_attack": 3,
+    "early_stop_patience": 0,
+    "grab_nc": 10,
+    "grab_nd": 5,
+    "grab_nb": 3,
+    "mlpsvd_n_sv": 5
+  },
+  "validation_defaults": {
+    "models": [
+      "gpt2"
+    ],
+    "attacks": [
+      "mlp_svd"
+    ],
+    "dataset_size": 50,
+    "n_attack": 5
+  },
+  "output_filename": "adaptive-attack-evaluation.json",
+  "behavior": {
+    "validation_strategy": "adaptive_attack",
+    "validation_attack": "mlp_svd"
+  }
+}

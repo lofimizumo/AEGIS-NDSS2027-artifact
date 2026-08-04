@@ -1,0 +1,17 @@
+# Reproducible Python 3.11 CPU evaluator stack.
+# On Linux, install torch from the PyTorch CPU wheel index.
+accelerate==1.1.1
+datasets==2.21.0
+huggingface-hub==0.26.2
+nltk==3.9.1
+numpy==1.26.4
+peft==0.13.2
+pillow==11.0.0
+rouge-score==0.1.2
+safetensors==0.4.5
+scikit-learn==1.5.2
+scipy==1.14.1
+tokenizers==0.20.3
+torch==2.5.1
+tqdm==4.67.1
+transformers==4.46.3

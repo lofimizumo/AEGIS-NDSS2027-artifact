@@ -1,0 +1,89 @@
+{
+  "name": "side-channel-probe-validation",
+  "title": "Adaptive side-channel probe validation",
+  "mode": "side_channel",
+  "models": [
+    "tiny_gpt2",
+    "gpt2",
+    "gpt2-medium",
+    "gpt2-large",
+    "gpt2-xl",
+    "bert-base",
+    "bert-large",
+    "roberta-base",
+    "roberta-large",
+    "deberta-v3-small",
+    "deberta-v3-base",
+    "deberta-v3-large",
+    "llama-2-7b",
+    "llama-2-13b",
+    "llama-3.1-8b",
+    "gemma-2-2b",
+    "gemma-2-9b",
+    "phi-2",
+    "opt-1.3b"
+  ],
+  "datasets": [
+    "rotten_tomatoes",
+    "emotion",
+    "financial_phrasebank",
+    "wikitext2",
+    "dialogsum",
+    "cnn_dailymail"
+  ],
+  "defenses": [
+    "none",
+    "aegis"
+  ],
+  "attacks": [
+    "mlp_fc",
+    "mlp_proj",
+    "layernorm",
+    "lm_head"
+  ],
+  "defaults": {
+    "models": [
+      "gpt2"
+    ],
+    "datasets": [
+      "wikitext2"
+    ],
+    "defenses": [
+      "none",
+      "aegis"
+    ],
+    "attacks": [
+      "mlp_fc",
+      "mlp_proj",
+      "layernorm",
+      "lm_head"
+    ],
+    "n_sentences": 8,
+    "max_tokens": 32,
+    "untie_head": false,
+    "random_baseline": true,
+    "valid_threshold": 0.1,
+    "block_threshold": 0.05,
+    "valid_margin": 0.05,
+    "block_margin": 0.05,
+    "mlp_flood_scale": 8.0,
+    "mlp_retain": 0.0,
+    "ln_flood_scale": 4.0
+  },
+  "quick_defaults": {
+    "n_sentences": 2,
+    "max_tokens": 16
+  },
+  "validation_defaults": {
+    "defenses": [
+      "none",
+      "aegis"
+    ]
+  },
+  "output_filename": "side-channel-probe-validation.json",
+  "behavior": {
+    "validation_strategy": "side_channel",
+    "validation_open_defense": "none",
+    "validation_protected_defense": "aegis"
+  }
+}
