@@ -30,13 +30,46 @@
 We request \emph{Artifacts Reproduced}. The artifact is a scaled-down CPU micro-GPT-2
 experiment with fixed local token IDs and default \texttt{AegisDefense}. It supports the
 directional claim that AEGIS suppresses embedding-gradient token-set leakage versus an
-undefended baseline; it does not reproduce full-table ROUGE. No model, tokenizer, or
-dataset is downloaded at runtime.
+undefended baseline.
 
 \paragraph{Requirements.}
 Docker (x86-64/arm64) or
 Python~3.11 on Linux/macOS. Setup 5--20 minutes; kick-the-tires $<$2 minutes;
 scaled-reproduction $\sim$5 minutes (up to $\sim$10 on slower hosts).
+
+\paragraph{Folder structure.}
+The submission package layout is:
+\begin{verbatim}
+.
+|-- README.md                 # install and run guide
+|-- Dockerfile                # CPU Docker image
+|-- pyproject.toml            # Python package metadata
+|-- constraints-cpu.txt       # pinned CPU package versions
+|-- THIRD_PARTY_NOTICES.md    # vendored DAGER notice
+|-- LICENSES/                 # third-party licenses
+|-- artifact/
+|   |-- appendix.tex          # this appendix source
+|   `-- appendix.pdf          # this appendix PDF
+|-- scripts/
+|   |-- install-artifact.sh   # create .venv and install deps
+|   |-- kick-the-tires.sh     # quick test + verify
+|   |-- run-scaled-reproduction.sh
+|   `-- verify-artifact.py    # check result JSON
+|-- configs/studies/          # optional research study configs
+`-- src/aegis/
+    |-- cli.py                # aegis CLI entry
+    |-- artifact/             # kick-the-tires / scaled runners
+    |-- attacks/              # reconstruction attacks
+    |-- defenses/             # AEGIS and baselines
+    |-- evaluation/           # metrics
+    |-- harness/              # study runner
+    |-- models/               # micro-model helpers
+    |-- training/             # training loop
+    |-- data/ studies/ config/
+    `-- third_party/dager/    # vendored DAGER helpers
+\end{verbatim}
+After a successful run, results are written under \path{artifact-results/}
+(created at runtime; not shipped in the package).
 
 \paragraph{Claims.}
 \textbf{R1:} undefended embed-norm content-token recall above threshold.

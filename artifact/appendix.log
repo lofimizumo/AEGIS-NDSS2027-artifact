@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  4 AUG 2026 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  21 AUG 2026 11:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -467,18 +467,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-Underfull \hbox (badness 6691) in paragraph at lines 62--66
+) [1
+
+{/Users/yetao/Library/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+}]
+Underfull \hbox (badness 6691) in paragraph at lines 95--99
 []\OT1/cmr/m/n/10.95 (+20) Locally: $\OT1/cmtt/m/n/10.95 scripts / install-[]ar
 tifact . sh$\OT1/cmr/m/n/10.95 (+20) , then \OT1/cmtt/m/n/10.95 aegis artifact 
 \OT1/cmr/m/n/10.95 (+20) (or $\OT1/cmtt/m/n/10.95 quick-[]test$ \OT1/cmr/m/n/10
 .95 (+20) /
  []
 
-[1
-
-{/Users/yetao/Library/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-}] (./appendix.aux)
+[2] (./appendix.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -487,13 +487,13 @@ Package rerunfilecheck Info: File `appendix.out' has not changed.
 (rerunfilecheck)             Checksum: 181FF609EC78A2A9C23D3696696021A4;131.
  ) 
 Here is how much of TeX's memory you used:
- 12646 strings out of 467525
- 194710 string characters out of 5418982
- 657150 words of memory out of 5000000
+ 12648 strings out of 467525
+ 194726 string characters out of 5418982
+ 666150 words of memory out of 5000000
  41366 multiletter control sequences out of 15000+600000
  637285 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,1005b,458s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,79p,1005b,679s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -502,10 +502,10 @@ sr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
 /local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
 local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/l
 ocal/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on appendix.pdf (1 page, 106889 bytes).
+Output written on appendix.pdf (2 pages, 110703 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
+ 69 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
  21001 words of extra memory for PDF output out of 24883 (max. 10000000)
 
