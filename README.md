@@ -3,7 +3,9 @@
 This is a scaled-down model experiment supporting the directional claim that AEGIS
 suppresses embedding-gradient token-set leakage vs an undefended baseline.
 
-
+```text
+We've added a permanent artifact link at Zenodo, with the DOI: 10.5281/zenodo.22760837.
+```
 ### Requirements
 
 | Item | Need |
@@ -201,3 +203,4 @@ aegis run configs/studies/adaptive-attack-evaluation.json --quick
 ```
 
 These may download models or data.
+
